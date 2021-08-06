@@ -1,3 +1,4 @@
+const { preferences } = require('joi');
 const Joi = require('joi');
 
 //validate registration request:
@@ -14,10 +15,23 @@ const registerValidation = data => {
             .email(),
         password: Joi.string()
             .min(6)
-            .required()
+            .required(),
+        preferences: {
+            bio: Joi.string()
+                .min(4)
+                .required(),
+            classyear: Joi.string()
+                .min(4)
+                .max(4)
+                .required(),
+            major: Joi.string()
+                .min(4)
+                .required(),
+        }
+
 
     });
-
+    
     return Schema.validate(data);
 
 }

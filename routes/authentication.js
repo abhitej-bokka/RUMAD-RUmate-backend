@@ -8,6 +8,7 @@ const { valid } = require('joi');
 
 //REGISTER REQUEST:
 router.post(('/register'), async (req, res) => {
+    console.log('Registration Post Request Started')
 
     //check for validation errors:
     const { error } = registerValidation(req.body);
@@ -35,9 +36,11 @@ router.post(('/register'), async (req, res) => {
         const savedUser = await user.save();
         res.send({ user: user._id }); 
         //res.send(user)
+        console.log('User is Registered')
 
     } catch (err) {
         res.status(400).send(err);
+        console.log('User is not Registered')
 
     }
 

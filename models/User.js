@@ -15,8 +15,8 @@ const preferencesSchema = new mongoose.Schema({
 
         type: String,
         required: true,
-        min: 2,
-        max: 8
+        min: 4,
+        max: 4
 
     },
     major: {

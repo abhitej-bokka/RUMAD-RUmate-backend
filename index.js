@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 
 //import all routes:
 const authenticationRoute = require('./routes/authentication');
+//Added by Abhitej
+const profilebuilderRoute = require('./routes/profilebuilder');
 
 //config enviroment file:
 dotenv.config();
@@ -22,6 +24,8 @@ app.use(express.json());
 
 //route middlewares:
 app.use('/api/user', authenticationRoute);
+//Added by Abhitej
+app.use('/api/user', profilebuilderRoute);
 
 //listener:
 app.listen(3000, () => console.log('Server is now runnning!'));

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Preference = require('./Preferences');
 const userSchema = new mongoose.Schema({
 
     name: {
@@ -26,12 +26,20 @@ const userSchema = new mongoose.Schema({
         max: 1024
 
     },
+    preferences: {
+
+        type: Preference,
+        required: true,
+        
+
+    },
     date: {
 
         type: Date,
         default: Date.now()
 
     }
+    
 
 });
 

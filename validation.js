@@ -42,5 +42,33 @@ const loginValidation = data => {
 }
 
 
+//validate buildprofile request:
+const profileValidation = data => {
+
+    const Schema = Joi.object({
+
+        bio: Joi.string()
+            .min(4)
+            
+            .required(),
+        classyear: Joi.string()
+            .min(2)
+            
+            .required(),
+        major: Joi.string()
+            .min(4)
+            
+            .required()
+    });
+
+    return Schema.validate(data);
+
+}
+
+
+
+
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
+module.exports.profileValidation = profileValidation;
+

@@ -1,5 +1,39 @@
 const mongoose = require('mongoose');
 const Preference = require('./Preferences');
+
+const preferencesSchema = new mongoose.Schema({
+
+    bio: {
+
+        type: String,
+        required: true,
+        min: 4,
+        max: 512
+
+    },
+    classyear: {
+
+        type: String,
+        required: true,
+        min: 2,
+        max: 8
+
+    },
+    major: {
+
+        type: String,
+        required: true,
+        min: 4,
+        max: 32
+
+    }
+    
+    
+    
+    
+});
+
+
 const userSchema = new mongoose.Schema({
 
     name: {
@@ -28,7 +62,7 @@ const userSchema = new mongoose.Schema({
     },
     preferences: {
 
-        type: Preference,
+        type: preferencesSchema,
         required: true,
         
 
@@ -39,8 +73,12 @@ const userSchema = new mongoose.Schema({
         default: Date.now()
 
     }
-    
 
 });
+
+
+
+
+
 
 module.exports = mongoose.model('User', userSchema);

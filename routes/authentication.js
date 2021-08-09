@@ -35,7 +35,6 @@ router.post(('/register'), async (req, res) => {
     try {
         const savedUser = await user.save();
         res.send({ user: user._id }); 
-        //res.send(user)
         console.log('User is Registered')
 
     } catch (err) {
@@ -64,7 +63,14 @@ router.post(('/login'), async (req, res) => {
 
     //create and assign java web token:
     const token = jwt.sign({ _id: user._id}, process.env.JWT_SECRET);
-    res.header('auth-token', token).send(token);
+
+    res.send({
+
+        token: token,
+        _id: user._id
+
+    });
+
     console.log('displayed')
 
 });

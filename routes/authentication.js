@@ -28,13 +28,24 @@ router.post(('/register'), async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
-        preferences: req.body.preferences
+        preferences: req.body.preferences,  
+        campusSelection: req.body.preferences.dormSpecs.campusSelection,
+        matches: req.body.matches,
+        seen: req.body.seen
 
     });
 
+    const token = jwt.sign(
+        { _id: user._id}, 
+        process.env.JWT_SECRET, 
+        {expiresIn: "2h",}
+        );
+    user.token = token;
+    
+
     try {
         const savedUser = await user.save();
-        res.send({ user: user._id }); 
+        res.send({ user: user._id, token: user.token }); 
         console.log('User is Registered')
 
     } catch (err) {
@@ -42,6 +53,7 @@ router.post(('/register'), async (req, res) => {
         console.log('User is not Registered')
 
     }
+    
 
 });
 
@@ -62,7 +74,12 @@ router.post(('/login'), async (req, res) => {
     if (!validPass) return res.status(400).send('Password is invalid!');
 
     //create and assign java web token:
-    const token = jwt.sign({ _id: user._id}, process.env.JWT_SECRET);
+    const token = jwt.sign(
+        { _id: user._id}, 
+        process.env.JWT_SECRET, 
+        {expiresIn: "2h",}
+        );
+    user.token = token;
 
     res.send({
 
@@ -71,7 +88,7 @@ router.post(('/login'), async (req, res) => {
 
     });
 
-    console.log('displayed')
+    console.log('Displayed')
 
 });
 

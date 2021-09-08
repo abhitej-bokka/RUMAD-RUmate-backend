@@ -1,3 +1,6 @@
+//File No Longer Needed
+
+/*
 const mongoose = require('mongoose');
 
 const preferencesSchema = new mongoose.Schema({
@@ -35,3 +38,4 @@ const preferencesSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('Preferences', preferencesSchema);
+*/

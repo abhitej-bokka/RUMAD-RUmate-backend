@@ -16,3 +16,5 @@ module.exports = function (req, res, next) {
     }
 
 }
+
+// 57:28 / 1:15:40 on video - Build A Node.js API Authentication With JWT Tutorial

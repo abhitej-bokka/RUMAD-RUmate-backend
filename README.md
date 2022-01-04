@@ -9,7 +9,9 @@ The backend track that I took allowed me to learn a lot about JavaScript, the fr
 
 Wanting to dorm on campus at Rutgers, I hit a roadblock as to how I should get a roomate. I was struggling to find out where I can meet people and how I can easily reach out to people
 that are also looking for a roomate. With many problems, comes many solutions, and a mobile app to find roomates would completely solve this issue. Now the pandemic gave me an extended break to find a roomate,
-but instead, I and a few other members of the club used it to help create a roomate matching application. We decided to take over 15 multiple data points from users like
+but instead, I and a few other members of the club used it to help create a roomate matching application. 
+
+We decided to take over 15 multiple data points from users like
 their sleep schedule, to their class year, to their preference of campuses. I eventually created an algorithm that would assign these attributes certain weights and compared them to other users to 
 curate a queue of potential roomates for each user.
 

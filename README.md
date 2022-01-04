@@ -1,4 +1,4 @@
-# RUmate-backend - Rutgers Mobile App Development Club (RUMAD)- Summer 2021
+# RUmate-backend - Rutgers Mobile App Development Club (RUMAD) - Summer 2021
 
 
 ### Introduction

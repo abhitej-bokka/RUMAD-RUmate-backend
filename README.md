@@ -1,7 +1,7 @@
 # RUmate-backend - Rutgers Mobile App Development Club (RUMAD) - Summer 2021
 
 
-### Introduction
+### Background
 
 Rutgers Mobile App Development Club is a student-led Computer Science club invested in teaching the Rutgers community about Mobile App Development.
 The club created a program known as the Accelertor which teaches a select amount of students the fundamentals of mobile app development - in my case JavaScript for the backend.
